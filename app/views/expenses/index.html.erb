@@ -1,0 +1,7 @@
+<p>Hello,<%= @user.user_name %></p>
+<ul>
+  <% @expenses.each do |expense| %>
+    <li><%= expense.name %> - <%= expense.price %></li> - <%= expense.date.strftime("%d/%m/%Y") %>
+  <% end %>
+</ul>
+
