@@ -1,7 +1,6 @@
 class Expense < ApplicationRecord
-  has_many :users
+  belongs_to :user
 
   validates :name, :price, presence: true
   validates :price, numericality: true
-  
 end

@@ -1,8 +1,11 @@
-<p>Hello,<%= @user.user_name %></p>
+<p>Hello,<%= @user.user_name %> </p>
+
 <ul>
   <% @expenses.each do |expense| %>
-    <li><%= expense.name %> - <%= expense.price %></li> - <%= expense.date.strftime("%d/%m/%Y") %>
-  <% end %>
+    <li><%= expense.name %> - <%= expense.price %> - <%= expense.date %></li>
+      <%= link_to "editer", edit_expense_path(expense)%>
+      <%= link_to "supprimer", expense_path(expense), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <%end%>
 </ul>
 
 <%= link_to "+", new_expense_path, class: "btn btn-flat" %>

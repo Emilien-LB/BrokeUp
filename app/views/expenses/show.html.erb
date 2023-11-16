@@ -1,0 +1,8 @@
+<h1><%= @expense.name %></h1>
+<p><strong>Dépense :</strong> <%= @expense.expense %></p>
+<p><strong>Paiement :</strong> <%= @expense.payment %></p>
+<p><strong>Prix :</strong> <%= @expense.price %></p>
+<p><strong>Date :</strong> <%= @expense.date %></p>
+
+<%= link_to 'Retour aux dépenses', expenses_path %>
+<%= button_to "Destroy this expense", @expense, method: :delete %>

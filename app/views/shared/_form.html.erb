@@ -1,0 +1,7 @@
+<%= simple_form_for @expense do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :date, as: :date, html5: true, discard_hour: true %>
+  <%= f.input :payment,    as: :radio_buttons %>
+  <%= f.button :submit %>
+<% end %>
