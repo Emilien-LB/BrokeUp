@@ -1,0 +1,15 @@
+<h1>Nouvelle dépense :</h1>
+
+<%= form_for(@expense) do |f| %>
+  <%= f.text_field :name %>
+
+  <%= f.label :transaction_type, 'Transaction Type' %>
+  <%= f.radio_button :expense, 'Expense' %> <%= f.label :transaction_type_expense, 'Expense' %>
+  <%= f.radio_button :payment, 'Payment' %> <%= f.label :transaction_type_payment, 'Payment' %>
+
+  <%= f.label :price, 'Price' %>
+  <%= f.text_field :price %>
+  <%= f.label :date, 'Date' %>
+  <%= f.date_field :date %>
+  <%= f.submit %>
+<% end %>
