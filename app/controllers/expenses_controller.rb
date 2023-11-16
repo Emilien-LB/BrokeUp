@@ -10,19 +10,25 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @expense = Expense.new(params[:expense])
-
+    @expense = Expense.new(expense_params)
     if @expense.save
-      redirect_to expense_path, notice: "Expense was successfully created."
+      redirect_to @expense, notice: "Expense was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :index, status: :unprocessable_entity
     end
-    redirect_to expenses_path
+  end
+
+  def update
+
+  end
+
+  def edit
+    
   end
 
   private
 
   def expense_params
-    params.require(:expense).permit(name:, expense:, payment:, price:, date:)
+    params.require(:expense).permit(:name, :expense, :payment, :price, :date)
   end
 end
